@@ -1,0 +1,142 @@
+<form [formGroup]="registrationform" class="p-10 border-2 border-black rounded-md neobrutalism-shadow bg-yellow-100"
+    (ngSubmit)="onSubmit()">
+    <div class="pb-10">
+        <p class="text-3xl font-publicsansbold text-center ">Class Registration</p>
+        <p class="text-sm font-publicsansbold text-center text-slate-500">Please fill out the form carefully for
+            registration</p>
+    </div>
+    <div class="p-2 pb-5">
+        <p class="pb-2 font-publicsansbold">Student Name</p>
+        <div class="flex flex-col sm:flex-row gap-2  w-full">
+
+
+            <div class="flex flex-col">
+                <input type="text" placeholder="First Name"
+                    [ngClass]=" (this.registrationform.get('firstName')?.invalid && this.registrationform.get('firstName')?.touched) ? 'outline-none border-2 rounded-md  border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md  border-slate-900 bg-yellow-200 px-2 py-2' "
+                    formControlName="firstName">
+
+                <p *ngIf="(this.registrationform.get('firstName')?.invalid && this.registrationform.get('firstName')?.touched)"
+                    class="text-sm font-bold text-red-500">*invalid input</p>
+            </div>
+
+            <!-- <input type="text" placeholder="Middle Name"
+                class="outline-none border-2 rounded-md  border-slate-900 px-2 py-2 " formControlName="middleName"> -->
+
+
+            <div class="flex flex-col">
+                <input type="text" placeholder="Middle Name"
+                    [ngClass]=" (this.registrationform.get('middleName')?.invalid && this.registrationform.get('middleName')?.touched) ? 'outline-none border-2 rounded-md  border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md  border-slate-900 bg-yellow-200 px-2 py-2' "
+                    formControlName="middleName">
+
+                <p *ngIf="(this.registrationform.get('middleName')?.invalid && this.registrationform.get('middleName')?.touched)"
+                    class="text-sm font-bold text-red-500">*invalid input</p>
+            </div>
+
+
+            <div class="flex flex-col">
+                <input type="text" placeholder="Last Name"
+                    [ngClass]=" (this.registrationform.get('lastName')?.invalid && this.registrationform.get('lastName')?.touched) ? 'outline-none border-2 rounded-md  border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md  border-slate-900 bg-yellow-200 px-2 py-2' "
+                    formControlName="lastName">
+
+                <p *ngIf="(this.registrationform.get('lastName')?.invalid && this.registrationform.get('lastName')?.touched)"
+                    class="text-sm font-bold text-red-500">*invalid input</p>
+            </div>
+
+
+            <!-- <input type="text" placeholder="Last Name"
+                class="outline-none border-2 rounded-md  border-slate-900 px-2 py-2 " formControlName="lastName"> -->
+        </div>
+    </div>
+
+
+    <div class="p-2 pb-5 flex flex-col sm:flex-row gap-2">
+        <div class="flex-1">
+            <p class="pb-2 font-publicsansbold">Gender</p>
+            <div class="flex flex-col">
+                <select
+                    [ngClass]="(this.registrationform.get('gender')?.invalid && this.registrationform.get('gender')?.touched) ? 'outline-none border-2 rounded-md border-red-500 bg-red-100 px-2 py-2 w-full' : 'outline-none border-2 rounded-md border-slate-900 bg-yellow-200 px-2 py-2 w-full' "
+                    formControlName="gender">
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="non-binary">Non-Binary</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+                <p *ngIf="(this.registrationform.get('gender')?.invalid && this.registrationform.get('gender')?.touched)"
+                    class="text-sm font-bold text-red-500">*invalid input</p>
+            </div>
+        </div>
+
+
+        <div class="flex-1">
+            <p class="pb-2 font-publicsansbold">Email</p>
+            <!-- <input type="text" placeholder="your.email@gmail.com"
+                class="outline-none border-2 rounded-md  border-slate-900 px-2 py-2 w-full " formControlName="email">
+             -->
+
+            <div class="flex flex-col">
+                <input type="email" placeholder="your.email@gmail.com"
+                    [ngClass]=" (this.registrationform.get('email')?.invalid && this.registrationform.get('email')?.touched) ? 'outline-none border-2 rounded-md  border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md  border-slate-900 bg-yellow-200 px-2 py-2' "
+                    formControlName="email">
+
+                <p *ngIf="(this.registrationform.get('email')?.invalid && this.registrationform.get('email')?.touched)"
+                    class="text-sm font-bold text-red-500">*invalid input</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="p-2 pb-5 flex flex-col sm:flex-row gap-2">
+        <div class="flex-1">
+            <p class="pb-2 font-publicsansbold">Student ID</p>
+            <div class="flex flex-col">
+                <input type="text" placeholder="2FKD108"
+                    [ngClass]=" (this.registrationform.get('studentId')?.invalid && this.registrationform.get('studentId')?.touched) ? 'outline-none border-2 rounded-md  border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md  border-slate-900 bg-yellow-200 px-2 py-2' "
+                    formControlName="studentId">
+
+                <p *ngIf="(this.registrationform.get('studentId')?.invalid && this.registrationform.get('studentId')?.touched)"
+                    class="text-sm font-bold text-red-500">*invalid input</p>
+            </div>
+        </div>
+
+
+        <div class="flex-1">
+            <p class="pb-2 font-publicsansbold">Stream</p>
+            <!-- <select class="outline-none border-2 rounded-md border-slate-900 px-2 py-2 w-full" formControlName="stream">
+                <option value="" disabled selected>Select Stream</option>
+                <option value="male">Science</option>
+                <option value="female">Commerce</option>
+                <option value="non-binary">Arts</option>
+            </select> -->
+
+
+            <div class="flex flex-col">
+                <select
+                    [ngClass]="(this.registrationform.get('stream')?.invalid && this.registrationform.get('stream')?.touched) ? 'outline-none border-2 rounded-md border-red-500 bg-red-100 px-2 py-2 w-full' : 'outline-none border-2 rounded-md border-slate-900 bg-yellow-200 px-2 py-2 w-full' "
+                    formControlName="stream">
+                    <option value="" disabled selected>Select Stream</option>
+                    <option value="Science">Science</option>
+                    <option value="Commerce">Commerce</option>
+                    <option value="Arts">Arts</option>
+
+                </select>
+                <p *ngIf="(this.registrationform.get('stream')?.invalid && this.registrationform.get('stream')?.touched)"
+                    class="text-sm font-bold text-red-500">*invalid input</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="flex flex-col sm:flex-row gap-5 pt-5 justify-center">
+        <button type="reset"
+            class="px-20 py-2 border-2 border-slate-900 bg-red-200 rounded-md neobrutalism-shadow hover:scale-105 transition-transform font-publicsansbold">Reset</button>
+        <button type="submit"
+            class="px-20 py-2 border-2 border-slate-900 rounded-md neobrutalism-shadow hover:scale-105 transition-transform font-publicsansbold bg-cyan-200 disabled:opacity-50"
+            [disabled]="!registrationform.valid">Submit</button>
+    </div>
+
+</form>

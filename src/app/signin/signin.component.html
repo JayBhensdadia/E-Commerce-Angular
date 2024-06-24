@@ -1,0 +1,67 @@
+<div class="w-full h-screen flex justify-center items-center">
+    <form [formGroup]="signinForm" class="p-10 border-2 border-black rounded-md neobrutalism-shadow bg-yellow-100"
+        (ngSubmit)="onSubmit()">
+        <div class="pb-10">
+            <p class="text-3xl font-publicsansbold text-center ">Sign In</p>
+            <p class="text-sm font-publicsansbold text-center text-slate-500">Great to see you again!</p>
+        </div>
+
+
+
+        <div class="p-2 pb-5 flex flex-col sm:flex-row gap-2">
+
+
+
+            <div class="flex-1">
+                <p class="pb-2 font-publicsansbold">Email</p>
+
+
+                <div class="flex flex-col">
+                    <input type="email" placeholder="your.email@gmail.com"
+                        [ngClass]=" (this.signinForm.get('email')?.invalid && this.signinForm.get('email')?.touched) ? 'outline-none border-2 rounded-md  border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md  border-slate-900 bg-yellow-200 px-2 py-2' "
+                        formControlName="email">
+
+                    <p *ngIf="(this.signinForm.get('email')?.invalid && this.signinForm.get('email')?.touched)"
+                        class="text-sm font-bold text-red-500">*invalid input</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="p-2 pb-5 flex flex-col sm:flex-row gap-2">
+            <!-- Password -->
+            <div class="flex-1">
+                <p class="pb-2 font-publicsansbold">Password</p>
+                <div class="flex flex-col">
+                    <input type="password" placeholder="Password"
+                        [ngClass]=" (signinForm.get('password')?.invalid && signinForm.get('password')?.touched) ? 'outline-none border-2 rounded-md border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md border-slate-900 bg-yellow-200 px-2 py-2' "
+                        formControlName="password">
+                    <p *ngIf="(signinForm.get('password')?.invalid && signinForm.get('password')?.touched)"
+                        class="text-sm font-bold text-red-500">*invalid input</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="flex flex-col sm:flex-row gap-5 pt-5 justify-center">
+            <button type="reset"
+                class="px-20 py-2 border-2 border-slate-900 bg-red-200 rounded-md neobrutalism-shadow hover:scale-105 transition-transform font-publicsansbold">Reset</button>
+            <button type="submit"
+                class="px-20 py-2 border-2 border-slate-900 rounded-md neobrutalism-shadow hover:scale-105 transition-transform font-publicsansbold bg-cyan-200 disabled:opacity-50"
+                [disabled]="!signinForm.valid">Submit</button>
+        </div>
+
+        <p class="text-center pt-10">Don't have an accoutn?
+
+            <a [routerLink]="['/signup']"
+                class="font-publicsansbold bg-cyan-200/60 p-1 border-2 border-slate-900 rounded-md  hover:bg-cyan-300">Sign
+                Up</a>
+        </p>
+
+    </form>
+</div>

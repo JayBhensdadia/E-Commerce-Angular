@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.neobrutalism-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: "Public Sans";
+    src: url("./assets/PublicSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Public Sans Bold";
+    src: url("./assets/PublicSans-Bold.ttf");
+}
+
+
+@font-face {
+    font-family: "Public Sans Black";
+    src: url("./assets/PublicSans-Black.ttf");
+}

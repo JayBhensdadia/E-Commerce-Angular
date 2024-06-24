@@ -1,0 +1,31 @@
+<div class="w-full h-screen flex flex-col">
+    <nav class="w-full flex flex-row justify-between items-center bg-yellow-300/50 p-5 border-b-2 border-slate-900">
+        <div class="text-3xl font-publicsansblack">Auth by JB</div>
+        <div class="flex flex-row gap-2">
+            <button (click)="logout()" c
+                class="bg-red-300 p-1 border-2 border-slate-900 rounded-md font-publicsansbold hover:bg-red-400">Logout</button>
+            <a [routerLink]="['/signup']"
+                class="font-publicsansbold bg-cyan-200/60 p-1 border-2 border-slate-900 rounded-md  hover:bg-cyan-300">Sign
+                Up</a>
+            <a [routerLink]="['/signin']"
+                class="font-publicsansbold bg-cyan-200/60 p-1 border-2 border-slate-900 rounded-md  hover:bg-cyan-300">Sign
+                In</a>
+        </div>
+    </nav>
+
+    <div class="flex-1 flex justify-center items-center">
+        <div *ngIf="error" class="error">
+            {{ error }}
+        </div>
+
+        <div *ngIf="userDetails" class="text-xl">
+            <h1>Welcome, {{ userDetails.firstName }} {{ userDetails.lastName }}</h1>
+            <p>Email: {{ userDetails.email }}</p>
+            <!-- Add more user details as needed -->
+        </div>
+
+        <div *ngIf="!userDetails && !error">
+            <p>Loading user details...</p>
+        </div>
+    </div>
+</div>
