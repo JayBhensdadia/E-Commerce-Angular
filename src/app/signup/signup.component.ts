@@ -20,15 +20,15 @@ export class SignupComponent {
   constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   signupForm = this.formBuilder.group({
-    firstName: ['', [Validators.required, validateName()]],
-    middleName: ['', [Validators.required, validateName()]],
-    lastName: ['', [Validators.required, validateName()]],
+    // firstName: ['', [Validators.required, validateName()]],
+    // middleName: ['', [Validators.required, validateName()]],
+    // lastName: ['', [Validators.required, validateName()]],
 
     email: ['', [Validators.required, validateEmail()]],
 
     password: ['', [Validators.required, validatePassword()]],
-    confirmPassword: ['', [Validators.required]],
-  }, { validators: this.passwordMatchValidator })
+    // confirmPassword: ['', [Validators.required]],
+  });
 
   passwordMatchValidator(formGroup: FormGroup) {
     if (formGroup.get('password') == null || formGroup.get('confirmPassword') == null) {

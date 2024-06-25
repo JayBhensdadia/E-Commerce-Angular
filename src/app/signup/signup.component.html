@@ -6,46 +6,7 @@
             <p class="text-sm font-publicsansbold text-center text-slate-500">Please fill out the form carefully for
                 registration</p>
         </div>
-        <div class="p-2 pb-5">
-            <p class="pb-2 font-publicsansbold">Name</p>
-            <div class="flex flex-col sm:flex-row gap-2  w-full">
 
-
-                <div class="flex flex-col">
-                    <input type="text" placeholder="First Name"
-                        [ngClass]=" (this.signupForm.get('firstName')?.invalid && this.signupForm.get('firstName')?.touched) ? 'outline-none border-2 rounded-md  border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md  border-slate-900 bg-yellow-200 px-2 py-2' "
-                        formControlName="firstName">
-
-                    <p *ngIf="(this.signupForm.get('firstName')?.invalid && this.signupForm.get('firstName')?.touched)"
-                        class="text-sm font-bold text-red-500">*invalid input</p>
-                </div>
-
-
-
-
-                <div class="flex flex-col">
-                    <input type="text" placeholder="Middle Name"
-                        [ngClass]=" (this.signupForm.get('middleName')?.invalid && this.signupForm.get('middleName')?.touched) ? 'outline-none border-2 rounded-md  border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md  border-slate-900 bg-yellow-200 px-2 py-2' "
-                        formControlName="middleName">
-
-                    <p *ngIf="(this.signupForm.get('middleName')?.invalid && this.signupForm.get('middleName')?.touched)"
-                        class="text-sm font-bold text-red-500">*invalid input</p>
-                </div>
-
-
-                <div class="flex flex-col">
-                    <input type="text" placeholder="Last Name"
-                        [ngClass]=" (this.signupForm.get('lastName')?.invalid && this.signupForm.get('lastName')?.touched) ? 'outline-none border-2 rounded-md  border-red-500 bg-red-100 px-2 py-2' : 'outline-none border-2 rounded-md  border-slate-900 bg-yellow-200 px-2 py-2' "
-                        formControlName="lastName">
-
-                    <p *ngIf="(this.signupForm.get('lastName')?.invalid && this.signupForm.get('lastName')?.touched)"
-                        class="text-sm font-bold text-red-500">*invalid input</p>
-                </div>
-
-
-
-            </div>
-        </div>
 
 
         <div class="p-2 pb-5 flex flex-col sm:flex-row gap-2">
@@ -82,7 +43,7 @@
                         class="text-sm font-bold text-red-500">*invalid input</p>
                 </div>
             </div>
-            <!-- Confirm Password -->
+            <!-- Confirm Password
             <div class="flex-1">
                 <p class="pb-2 font-publicsansbold">Confirm Password</p>
                 <div class="flex flex-col">
@@ -92,7 +53,7 @@
                     <p *ngIf="(signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched)"
                         class="text-sm font-bold text-red-500">*invalid input</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
 

@@ -32,7 +32,7 @@ export class SigninComponent {
     // address: ['', [Validators.required]],
     password: ['', [Validators.required, validatePassword()]],
     // confirmPassword: ['', [Validators.required]],
-  })
+  });
 
 
 

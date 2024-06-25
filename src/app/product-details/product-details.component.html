@@ -1,0 +1,22 @@
+<div class="w-full h-screen flex flex-col">
+
+    <app-navbar></app-navbar>
+
+    <div *ngIf="error" class="text-red-500">
+        {{ error }}
+    </div>
+    <div *ngIf="product" class="p-14 flex flex-col md:flex-row items-center">
+        <img [src]="product?.image" alt="{{ product?.name }}"
+            class="flex-1 max-w-[500px] rounded-xl overflow-clip shadow-2xl" />
+        <div class="flex-1 p-5 flex flex-col gap-5 bg-yellow-300/50 mx-10 font-publicsans rounded-xl">
+            <p class="text-5xl font-publicsansbold mt-2">{{ product?.name }}</p>
+
+            <div class="bg-slate-950 h-[1px]"></div>
+            <p class="text-xl mt-2">{{ product?.description }}</p>
+            <p class="text-2xl font-publicsansbold mt-2">${{ product?.price }}</p>
+        </div>
+    </div>
+    <div *ngIf="!product && !error" class="text-gray-500">
+        Loading product details...
+    </div>
+</div>
