@@ -1,11 +1,27 @@
 <nav class="w-full flex flex-row justify-between items-center bg-yellow-300/50 p-5 border-b-2 border-slate-900">
-    <div class="text-3xl font-bold">Haatdi</div>
-    <div class="flex flex-row gap-2">
-        <button (click)="logout()"
-            class="bg-red-300 p-1 border-2 border-slate-900 rounded-md font-bold hover:bg-red-400">Logout</button>
-        <a [routerLink]="['/signup']"
-            class="font-bold bg-cyan-200/60 p-1 border-2 border-slate-900 rounded-md hover:bg-cyan-300">Sign Up</a>
-        <a [routerLink]="['/signin']"
-            class="font-bold bg-cyan-200/60 p-1 border-2 border-slate-900 rounded-md hover:bg-cyan-300">Sign In</a>
+    <div class="text-3xl font-publicsansbold">Haatdi</div>
+    <div class="flex flex-row gap-2 justify-center items-center">
+        <ng-container *ngIf="isLoggedIn">
+            <!-- Show logout and cart button if logged in -->
+            <button (click)="logout()"
+                class="bg-red-300 p-1 border-2 border-slate-900 rounded-md font-bold hover:bg-red-400">Logout</button>
+
+            <div class="relative">
+                <a [routerLink]="['/cart']"
+                    class="font-bold bg-cyan-200/60 p-1 border-2 border-slate-900 rounded-md hover:bg-cyan-300">Cart</a>
+                <p
+                    class="p-1 px-2 bg-red-600 text-white rounded-full flex justify-center items-center text-sm absolute left-7 top-[-20px]">
+                    {{cartItems?.length}}
+                </p>
+            </div>
+
+        </ng-container>
+        <ng-container *ngIf="!isLoggedIn">
+            <!-- Show signin and signup button if not logged in -->
+            <a [routerLink]="['/signup']"
+                class="font-bold bg-cyan-200/60 p-1 border-2 border-slate-900 rounded-md hover:bg-cyan-300">Sign Up</a>
+            <a [routerLink]="['/signin']"
+                class="font-bold bg-cyan-200/60 p-1 border-2 border-slate-900 rounded-md hover:bg-cyan-300">Sign In</a>
+        </ng-container>
     </div>
 </nav>
