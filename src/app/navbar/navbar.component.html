@@ -5,15 +5,15 @@
             <!-- Show logout and cart button if logged in -->
             <button (click)="logout()"
                 class="bg-red-300 p-1 border-2 border-slate-900 rounded-md font-bold hover:bg-red-400">Logout</button>
+            <a [routerLink]="['/cart']"
+                class="font-bold bg-cyan-200/60 p-1 px-3 border-2 border-slate-900 rounded-md hover:bg-cyan-300">Cart</a>
+            <!-- <div class="relative">
 
-            <div class="relative">
-                <a [routerLink]="['/cart']"
-                    class="font-bold bg-cyan-200/60 p-1 border-2 border-slate-900 rounded-md hover:bg-cyan-300">Cart</a>
                 <p
                     class="p-1 px-2 bg-red-600 text-white rounded-full flex justify-center items-center text-sm absolute left-7 top-[-20px]">
                     {{cartItems?.length}}
                 </p>
-            </div>
+            </div> -->
 
         </ng-container>
         <ng-container *ngIf="!isLoggedIn">

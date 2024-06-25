@@ -53,6 +53,7 @@ export class ProductDetailsComponent implements OnInit {
           this.cartService.addToCart(this.product._id, this.user._id).subscribe(
             () => {
               console.log('Item added to cart successfully!');
+              // window.location.reload();
             },
             (error) => {
               console.error('Error adding item to cart:', error);

@@ -19,11 +19,11 @@
         </div>
 
         <div *ngIf="products.length"
-            class="flex-1 w-full grid grid-cols-1 self-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
+            class="w-full grid grid-cols-1 self-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
             <div *ngFor="let product of products" (click)="viewProductDetails(product._id)"
-                class="border-2 border-slate-900 rounded-md flex flex-col gap-1 w-64 cursor-pointer bg-yellow-300/50 hover:scale-105 transition-transform pb-5">
+                class="border-2 border-slate-900 rounded-md flex flex-col gap-1 w-64 cursor-pointer bg-yellow-300/50 hover:scale-105 transition-transform pb-5 shadow-lg neobrutalism-shadow ">
                 <img [src]="product.image" alt="{{ product.name }}"
-                    class="flex-1  aspect-square rounded-md overflow-clip " />
+                    class="flex-1  aspect-square rounded-md overflow-clip opacity-90" />
                 <h3 class="font-publicsansbold text-xl px-2">{{ product.name }}</h3>
                 <!-- <p>{{ product.description }}</p> -->
                 <p class="font-publicsansbold px-2">${{ product.price }}</p>
@@ -36,10 +36,10 @@
 
         <div *ngIf="totalPages > 1" class="pagination flex items-center gap-2 mt-5 font-publicsansbold">
             <button (click)="goToPage(page - 1)" [disabled]="page === 1"
-                class="bg-cyan-500 border-2 border-slate-900 p-2 rounded-md hover:bg-yellow-400 disabled:opacity-50">Previous</button>
+                class="bg-cyan-300 border-2 border-slate-900 p-2 rounded-md hover:bg-cyan-400 disabled:opacity-50">Previous</button>
             <span>Page {{ page }} of {{ totalPages }}</span>
             <button (click)="goToPage(page + 1)" [disabled]="page === totalPages"
-                class="bg-cyan-500 border-2 border-slate-900 p-2 rounded-md hover:bg-yellow-400 disabled:opacity-50">Next</button>
+                class="bg-cyan-300 border-2 border-slate-900 p-2 rounded-md hover:bg-cyan-400 disabled:opacity-50">Next</button>
         </div>
     </div>
 </div>

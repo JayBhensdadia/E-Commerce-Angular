@@ -21,11 +21,16 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.fetchUserDetails();
-    this.cartService.fetchCartItems().subscribe((res: any) => {
-      this.cartItems = res.cartItems;
-    });
+    this.loadItems();
   }
 
+
+  loadItems() {
+    this.cartService.fetchCartItems().subscribe((res: any) => {
+      this.cartItems = res.cartItems;
+      // window.location.reload();
+    });
+  }
   fetchUserDetails() {
     this.http.get('http://localhost:8080/api/user/me', { withCredentials: true })
       .pipe(
