@@ -24,3 +24,20 @@
     font-family: "Public Sans Black";
     src: url("./assets/PublicSans-Black.ttf");
 }
+
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("./assets/fonts/SpaceGrotesk-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Space Grotesk Bold";
+    src: url("./assets/fonts/SpaceGrotesk-Bold.ttf");
+}
+
+
+@font-face {
+    font-family: "Space Grotesk Semi Bold";
+    src: url("./assets/fonts/SpaceGrotesk-SemiBold.ttf");
+}

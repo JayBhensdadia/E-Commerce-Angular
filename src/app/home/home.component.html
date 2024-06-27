@@ -11,7 +11,7 @@
         </div>
     </nav> -->
 
-    <app-navbar></app-navbar>
+    <!-- <app-navbar></app-navbar> -->
 
     <div class="flex-1 flex flex-col justify-center items-center p-5">
         <div *ngIf="error" class="text-red-500">
@@ -21,12 +21,12 @@
         <div *ngIf="products.length"
             class="w-full grid grid-cols-1 self-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
             <div *ngFor="let product of products" (click)="viewProductDetails(product._id)"
-                class="border-2 border-slate-900 rounded-md flex flex-col gap-1 w-64 cursor-pointer bg-yellow-300/50 hover:scale-105 transition-transform pb-5 shadow-lg neobrutalism-shadow ">
+                class="border-2 border-slate-300 rounded-md flex flex-col gap-1 w-64 cursor-pointer hover:scale-105 transition-transform pb-5 shadow-lg">
                 <img [src]="product.image" alt="{{ product.name }}"
                     class="flex-1  aspect-square rounded-md overflow-clip opacity-90" />
-                <h3 class="font-publicsansbold text-xl px-2">{{ product.name }}</h3>
+                <h3 class="font-sgmb text-xl px-2">{{ product.name }}</h3>
                 <!-- <p>{{ product.description }}</p> -->
-                <p class="font-publicsansbold px-2">${{ product.price }}</p>
+                <p class="font-sgmb px-2">${{ product.price }}</p>
             </div>
         </div>
 
@@ -34,12 +34,13 @@
             <p>No products available.</p>
         </div>
 
-        <div *ngIf="totalPages > 1" class="pagination flex items-center gap-2 mt-5 font-publicsansbold">
+        <div *ngIf="totalPages > 1" class="pagination flex items-center gap-2 mt-5 font-sgmb">
             <button (click)="goToPage(page - 1)" [disabled]="page === 1"
-                class="bg-cyan-300 border-2 border-slate-900 p-2 rounded-md hover:bg-cyan-400 disabled:opacity-50">Previous</button>
+                class=" border-2 border-slate-300 px-2 py-1 rounded-md hover:bg-slate-300 disabled:opacity-50">Previous</button>
             <span>Page {{ page }} of {{ totalPages }}</span>
             <button (click)="goToPage(page + 1)" [disabled]="page === totalPages"
-                class="bg-cyan-300 border-2 border-slate-900 p-2 rounded-md hover:bg-cyan-400 disabled:opacity-50">Next</button>
+                class=" border-2 border-slate-300 px-2 py-1 rounded-md hover:bg-slate-300 disabled:opacity-50">Next</button>
         </div>
     </div>
+
 </div>
