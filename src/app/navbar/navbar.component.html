@@ -4,8 +4,9 @@
         <ng-container *ngIf="isLoggedIn">
             <!-- Show logout and cart button if logged in -->
             <button (click)="logout()"
-                class="bg-red-300 p-1 border-2 border-slate-900 rounded-md font-sgmb hover:bg-red-400">Logout</button>
-            <a [routerLink]="['/cart']" class="font-sgmb p-1 px-3 border-2 border-slate-900 rounded-md">Cart</a>
+                class="bg-red-500 text-white px-2 py-1 rounded-md font-sgmb hover:bg-red-400">Logout</button>
+            <a [routerLink]="['/cart']"
+                class="font-sgmb py-1 px-3 border-2 border-slate-300 rounded-md hover:bg-slate-300">Cart</a>
             <!-- <div class="relative">
 
                 <p
