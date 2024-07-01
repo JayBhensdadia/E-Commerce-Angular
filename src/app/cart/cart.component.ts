@@ -24,21 +24,27 @@ export class CartComponent implements OnInit {
     private productService: ProductService,
     private authService: AuthService) { }
 
-  ngOnInit() {
-    this.loadUser();
-    this.fetchCartItems();
+  async ngOnInit() {
+    await this.loadUser();
+    await this.fetchCartItems();
   }
 
   loadUser() {
     this.authService.fetchUserDetails().subscribe((res) => {
+
       this.user = res;
+      console.log(this.user);
     });
   }
 
   fetchCartItems() {
+    console.log('inside fetch cart items');
+
     this.http.get('http://localhost:8080/api/cart', { withCredentials: true })
       .subscribe(
         (data: any) => {
+          console.log(data);
+
           this.cartItems = data.cartItems;
           this.fetchProductsForCartItems();
         },
